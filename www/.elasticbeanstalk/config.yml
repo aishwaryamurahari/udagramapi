@@ -3,7 +3,7 @@ branch-defaults:
     environment: udagram-api-env
     group_suffix: null
   main:
-    environment: udagram-api-dev
+    environment: udagram-api-dev3
 environment-defaults:
   udagram-api-dev:
     branch: null
