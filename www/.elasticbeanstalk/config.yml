@@ -5,6 +5,9 @@ branch-defaults:
   main:
     environment: udagram-api-dev
 environment-defaults:
+  udagram-api-dev:
+    branch: null
+    repository: null
   udagram-api-env:
     branch: main
     repository: udagramapi
