@@ -24,15 +24,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = void 0;
+/* eslint-disable @typescript-eslint/camelcase */
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
-// ENV variables 
+// ENV variables
 // - AWS_ACCESS_KEY_ID
 // - AWS_SECRET_ACCESS_KEY
 // Are Also needed
 exports.config = {
     username: `${process.env.POSTGRES_USERNAME}`,
-    password: process.env.POSTGRES_PASSWORD,
+    password: `${process.env.POSTGRES_PASSWORD}`,
     database: process.env.POSTGRES_DB,
     host: process.env.POSTGRES_HOST,
     aws_region: process.env.AWS_REGION,
