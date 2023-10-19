@@ -46,39 +46,42 @@ const model_index_1 = require("./controllers/v0/model.index");
     dotenv.config();
     try {
         yield sequelize_1.sequelize.authenticate();
-        console.log("Connection has been established successfully.");
+        console.log('Connection has been established successfully.');
     }
     catch (error) {
-        console.error("Unable to connect to the database:", error);
+        console.error('Unable to connect to the database:', error);
     }
     yield sequelize_1.sequelize.addModels(model_index_1.V0_FEED_MODELS);
     yield sequelize_1.sequelize.addModels(model_index_1.V0_USER_MODELS);
     yield sequelize_1.sequelize.sync();
-    console.log("Database Connected");
+    console.log('Database Connected');
     const app = (0, express_1.default)();
     const port = 8080;
     app.use(body_parser_1.default.json());
     // app.use(cors());
     // We set the CORS origin to * so that we don't need to
-    // worry about the complexities of CORS. 
+    // worry about the complexities of CORS.
     app.use((0, cors_1.default)({
-        "allowedHeaders": [
-            'Origin', 'X-Requested-With',
-            'Content-Type', 'Accept',
-            'X-Access-Token', 'Authorization', 'Access-Control-Allow-Origin',
+        allowedHeaders: [
+            'Origin',
+            'X-Requested-With',
+            'Content-Type',
+            'Accept',
+            'X-Access-Token',
+            'Authorization',
+            'Access-Control-Allow-Origin',
             'Access-Control-Allow-Headers',
-            'Access-Control-Allow-Methods'
+            'Access-Control-Allow-Methods',
         ],
-        "methods": 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-        "preflightContinue": true,
-        "origin": '*',
+        methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+        preflightContinue: true,
+        origin: '*',
     }));
-    app.use("/api/v0/", index_router_1.IndexRouter);
+    app.use('/api/v0/', index_router_1.IndexRouter);
     // Root URI call
-    app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        res.send("/api/v0/");
+    app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        res.send('/api/v0/');
     }));
-    // Start the Server
     app.listen(port, () => {
         console.log(`Backend server is listening on port ${port}....`);
         console.log(`Frontent server running ${process.env.URL}`);

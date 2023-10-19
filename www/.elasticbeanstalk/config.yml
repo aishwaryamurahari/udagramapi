@@ -1,11 +1,17 @@
 branch-defaults:
   default:
-    environment: null
+    environment: udagram-api-env
     group_suffix: null
+  main:
+    environment: udagram-api-env
+environment-defaults:
+  udagram-api-env:
+    branch: null
+    repository: null
 global:
-  application_name: udagrams-api
+  application_name: udagram-api
   branch: null
-  default_ec2_keyname: vockey
+  default_ec2_keyname: null
   default_platform: Node.js 18 running on 64bit Amazon Linux 2023
   default_region: us-east-1
   include_git_submodules: true
@@ -14,5 +20,5 @@ global:
   platform_version: null
   profile: null
   repository: null
-  sc: null
+  sc: git
   workspace_type: Application
