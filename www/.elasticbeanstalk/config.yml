@@ -8,6 +8,9 @@ environment-defaults:
   udagram-api-dev:
     branch: null
     repository: null
+  udagram-api-dev3:
+    branch: null
+    repository: null
   udagram-api-env:
     branch: main
     repository: udagramapi
